@@ -173,11 +173,11 @@ class Decorator(object):
             return self.__decorator__(*args, **kwargs)
         return self.__wrap__(args[0])
 
-    def __get__(self, obj, klass=None):
+    def __get__(self, instance, klass=None):
         '''
         Non-data descriptor for inserting an instance as the first parameter
         to __call__ if this object is being accessed as a member.
         '''
-        if obj is None:
+        if instance is None:
             return self
-        return partial(self, obj)
+        return partial(self, instance)
