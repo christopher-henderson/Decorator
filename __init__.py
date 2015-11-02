@@ -1,2 +1,3 @@
-from decorator import Decorator
+from __future__ import absolute_import
+from .decorator import Decorator
 
